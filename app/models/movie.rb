@@ -21,16 +21,15 @@ class Movie < ApplicationRecord
   end
 
   def characters
-    char_id = self.character_id
     my_id = self.id
-    matching_results = Character.where({ :char_id => my_id})
-    return matching_results
+    matching_rows = Character.where({ :movie_id => my_id})
+    return matching_rows
   end
 
   def actor
     actor_id = self.actor_id
     my_id = self.id
-    matching_results = Actor.where({ :actor_id => my_id})
+    matching_results = Actor.where({ :movie_id => my_id})
     return matching_results
   end
 

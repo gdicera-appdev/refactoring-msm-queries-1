@@ -11,8 +11,12 @@
 #
 class Character < ApplicationRecord
   def movie
-    my_id = self.id
-    matching_results = Movie.where({ :char_id => my_id})
-    return matching_results
+    return Movie.where({ :id => self.movie_id }).at(0)
   end
+
+  def actor
+    return Actor.where({ :id => self.actor_id}).at(0)
+  end
+
+
 end

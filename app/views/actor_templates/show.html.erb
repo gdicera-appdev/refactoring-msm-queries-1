@@ -92,13 +92,16 @@
   <% @the_actor.characters.each do |a_character|%>
     <tr>
       <td>
+        <%= a_character.name%>,
+        <%= a_character.movie.title%> (<%= a_character.movie.year%>),
+        <%= a_character.movie.director.name%>
         <%#= the_movie.title %>
-        <%= a_character.movie.year %>
+        <%#= a_character.movie.year %>
       </td>
 
       <td>
         <%#= the_movie.year %>
-        <%= a_character.movie.director.name %>
+        <%#= a_character.movie.director.name %>
       </td>
 
       <td>
@@ -110,7 +113,7 @@
 
         <%#= the_director.name %>
 
-        <%= a_character.name %>
+        <%#= a_character.name %>
 
       </td>
 
@@ -126,3 +129,4 @@
     </tr>
   <% end %>
 </table>
+
